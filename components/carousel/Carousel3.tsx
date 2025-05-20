@@ -11,19 +11,8 @@ import {
 
 const salesBanners = [
   {
-    src: '/images/banner/banner.jpg',
+    src: '/images/banner/sales.png',
     alt: 'Mega Sale - Up to 50% Off',
-    link: {
-      pathname: '/search',
-      query: {
-        category: 'all',
-        q: '',
-      },
-    },
-  },
-  {
-    src: 'https://res.cloudinary.com/denlscvkr/image/upload/v1747761011/sasles_icvfdj.png',
-    alt: 'New Sales Banner',
     link: {
       pathname: '/search',
       query: {
