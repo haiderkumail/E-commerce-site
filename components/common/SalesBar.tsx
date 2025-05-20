@@ -16,7 +16,7 @@ const SalesBar = () => {
         }}
         className="whitespace-nowrap animate-marquee text-white hover:text-black dark:hover:text-gray-300 transition-all cursor-pointer text-xl font-extrabold tracking-wider"
       >
-        {Array(30).fill('50% OFF').join(' — ')}
+        {Array(30).fill('UPTO 50% OFF').join(' — ')}
       </Link>
     </div>
   );
