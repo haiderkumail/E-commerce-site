@@ -34,12 +34,11 @@ const ProductItem = ({ product, className = '' }: ProductItemProps) => {
 
   return (
     <div
-      className={`w-full max-w-[280px] bg-white dark:bg-gray-900 flex flex-col transition-transform duration-300 ${className}`}
-      style={{ height: '370px' }}
+      className={`w-full max-w-[280px] h-[370px] bg-white dark:bg-gray-900 flex flex-col transition-transform duration-300 sm:scale-100 scale-[0.96] ${className}`}
     >
       <Link href={`/product/${product.slug}`} className="block h-full">
         {/* Image Section */}
-        <div className="w-full relative" style={{ height: '270px' }}>
+        <div className="w-full h-[270px] relative">
           <Image
             src={
               isExternalImage(product.image)
@@ -53,9 +52,9 @@ const ProductItem = ({ product, className = '' }: ProductItemProps) => {
         </div>
 
         {/* Details Section */}
-        <div className="p-3 rounded-b-md bg-white/80 dark:bg-gray-800/70 backdrop-blur-md shadow-sm space-y-1 h-[100px] flex flex-col justify-between">
-          <div className="space-y-0.5">
-            <h3 className="text-sm font-semibold text-gray-900 dark:text-white line-clamp-2 leading-snug">
+        <div className="p-3 h-[100px] flex flex-col justify-between bg-white/80 dark:bg-gray-800/70 backdrop-blur-md shadow-sm">
+          <div className="space-y-0.5 overflow-hidden">
+            <h3 className="text-sm font-semibold text-gray-900 dark:text-white leading-snug line-clamp-2">
               {product.name}
             </h3>
             {product.brand && (
@@ -65,28 +64,20 @@ const ProductItem = ({ product, className = '' }: ProductItemProps) => {
             )}
           </div>
 
-          {/* Price Section (Always renders same layout) */}
-          <div className="flex items-center gap-2 min-h-[24px]">
-            <span className="text-sm font-bold text-black dark:text-white">
-              {currency} {price.toFixed(2)}
-            </span>
-
-            <span
-              className={`text-xs line-through text-gray-400 ${
-                discountValue > 0 ? 'inline' : 'invisible'
-              }`}
-            >
-              {currency} {originalPrice.toFixed(2)}
-            </span>
-
-            <span
-              className={`text-xs bg-green-100 text-green-600 px-2 py-0.5 rounded-full font-semibold ${
-                discountValue > 0 ? 'inline' : 'invisible'
-              }`}
-            >
-              -{discountValue}%
-            </span>
+          <div className="text-sm text-black dark:text-white font-bold">
+            {currency} {price.toFixed(2)}
           </div>
+
+          {discountValue > 0 && (
+            <div className="flex items-center gap-2 text-xs">
+              <span className="line-through text-gray-400">
+                {currency} {originalPrice.toFixed(2)}
+              </span>
+              <span className="bg-green-100 text-green-600 px-2 py-0.5 rounded-full font-semibold">
+                -{discountValue}%
+              </span>
+            </div>
+          )}
         </div>
       </Link>
     </div>
