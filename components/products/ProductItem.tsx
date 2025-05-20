@@ -34,7 +34,7 @@ const ProductItem = ({ product, className = '' }: ProductItemProps) => {
 
   return (
     <div
-      className={`w-full max-w-[280px] bg-white dark:bg-gray-900 flex flex-col transition-transform duration-300 sm:scale-100 scale-[0.96] ${className}`}
+      className={`w-full max-w-[280px] bg-white dark:bg-gray-900 flex flex-col transition-transform duration-300 ${className}`}
       style={{ height: '370px' }}
     >
       <Link href={`/product/${product.slug}`} className="block h-full">
@@ -58,7 +58,6 @@ const ProductItem = ({ product, className = '' }: ProductItemProps) => {
             <h3 className="text-sm font-semibold text-gray-900 dark:text-white line-clamp-2 leading-snug">
               {product.name}
             </h3>
-            {/* Brand name added here */}
             {product.brand && (
               <p className="text-xs text-gray-500 dark:text-gray-400 font-medium line-clamp-1">
                 {product.brand}
@@ -66,21 +65,27 @@ const ProductItem = ({ product, className = '' }: ProductItemProps) => {
             )}
           </div>
 
-          <div className="flex items-center gap-2">
+          {/* Price Section (Always renders same layout) */}
+          <div className="flex items-center gap-2 min-h-[24px]">
             <span className="text-sm font-bold text-black dark:text-white">
               {currency} {price.toFixed(2)}
             </span>
 
-            {discountValue > 0 && (
-              <>
-                <span className="text-xs line-through text-gray-400">
-                  {currency} {originalPrice.toFixed(2)}
-                </span>
-                <span className="text-xs bg-green-100 text-green-600 px-2 py-0.5 rounded-full font-semibold">
-                  -{discountValue}%
-                </span>
-              </>
-            )}
+            <span
+              className={`text-xs line-through text-gray-400 ${
+                discountValue > 0 ? 'inline' : 'invisible'
+              }`}
+            >
+              {currency} {originalPrice.toFixed(2)}
+            </span>
+
+            <span
+              className={`text-xs bg-green-100 text-green-600 px-2 py-0.5 rounded-full font-semibold ${
+                discountValue > 0 ? 'inline' : 'invisible'
+              }`}
+            >
+              -{discountValue}%
+            </span>
           </div>
         </div>
       </Link>
