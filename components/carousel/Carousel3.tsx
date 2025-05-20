@@ -11,7 +11,7 @@ import {
 
 const salesBanners = [
   {
-    src: '/images/banner/sale.jpg',
+    src: '/images/banner/banner.jpg',
     alt: 'Mega Sale - Up to 50% Off',
     link: {
       pathname: '/search',
