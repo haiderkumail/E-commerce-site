@@ -21,6 +21,17 @@ const salesBanners = [
       },
     },
   },
+  {
+    src: 'https://res.cloudinary.com/denlscvkr/image/upload/v1747761011/sasles_icvfdj.png',
+    alt: 'New Sales Banner',
+    link: {
+      pathname: '/search',
+      query: {
+        category: 'all',
+        q: '',
+      },
+    },
+  },
 ];
 
 const Carousel3 = () => {
