@@ -191,5 +191,5 @@
 
 .animate-marquee {
   display: inline-block;
-  animation: marquee 35s linear infinite; /* <- change this */
+  animation: marquee 45s linear infinite; /* <- change this */
 }
