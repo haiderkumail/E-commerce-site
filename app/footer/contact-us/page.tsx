@@ -20,7 +20,7 @@ const ContactUs = () => {
             <FaPhoneAlt className="text-4xl mb-4 text-primary mx-auto" />
             <h3 className="text-xl font-semibold mb-2 dark:text-white">Phone</h3>
             <p className="text-gray-600 dark:text-gray-300">
-              Call us at <strong>(123) 456-7890</strong> for immediate assistance.
+              Call us at <strong>0304-4526989</strong> for immediate assistance.
             </p>
           </div>
 
@@ -29,7 +29,7 @@ const ContactUs = () => {
             <FaEnvelope className="text-4xl mb-4 text-primary mx-auto" />
             <h3 className="text-xl font-semibold mb-2 dark:text-white">Email</h3>
             <p className="text-gray-600 dark:text-gray-300">
-              Reach us at <strong>support@kashafabrics.com</strong> for inquiries.
+              Reach us at <strong>Kashaffabrics974@gmail.com</strong> for inquiries.
             </p>
           </div>
 
@@ -37,9 +37,10 @@ const ContactUs = () => {
           <div className="text-center p-6 bg-white rounded-lg shadow-lg dark:bg-gray-800">
             <FaMapMarkerAlt className="text-4xl mb-4 text-primary mx-auto" />
             <h3 className="text-xl font-semibold mb-2 dark:text-white">Our Location</h3>
-            <p className="text-gray-600 dark:text-gray-300">
-              Visit us at <strong>123 Kashaf St, Lahore, Pakistan</strong>.
-            </p>
+<p className="text-gray-600 dark:text-gray-300">
+  Visit us at <strong>Branch 1: 7 Street, Momin Pura Link, Cavalry Ground, Walton Road, Lahore Cantt</strong> and <strong>Branch 2: Nadrabad stop street 2 bedian road lahore cantt</strong>.
+</p>
+
           </div>
         </div>
 
