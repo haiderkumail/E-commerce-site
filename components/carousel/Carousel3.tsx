@@ -31,7 +31,7 @@ const Carousel3 = () => {
           <CarouselItem key={index} className="!m-0 !p-0 w-screen max-w-none">
             <Link
               href={banner.link}
-              className="relative block h-[300px] sm:h-[304px] md:h-[400px] lg:h-[450px] xl:h-[500px] w-full overflow-hidden m-0 p-0"
+              className="relative block h-[300px] sm:h-[304px] md:h-[400px] lg:h-[500px] xl:h-[550px] w-full overflow-hidden m-0 p-0"
             >
               <Image
                 src={banner.src}
