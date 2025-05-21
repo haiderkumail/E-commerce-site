@@ -159,7 +159,7 @@
   text-align: center;
   padding: 10px 0;
   font-size: 16px;
-  animation: slide-left 12s linear infinite;
+  animation: slide-left 20s linear infinite;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
@@ -171,7 +171,7 @@
   text-align: center;
   padding: 10px 0;
   font-size: 16px;
-  animation: slide-left 12s linear infinite reverse;
+  animation: slide-right 20s linear infinite reverse;
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);
 }
 @layer base {
