@@ -99,6 +99,7 @@
 //   return <div className="skeleton h-[500px] sm:h-[304px] lg:h-[536px] w-screen" />;
 // };
 import Link from 'next/link';
+import Image from 'next/image';
 
 import {
   Carousel as SCarousel,
@@ -125,14 +126,17 @@ const Carousel = async () => {
                 }}
                 className="relative block h-[500px] sm:h-[304px] lg:h-[536px] w-full overflow-hidden m-0 p-0"
               >
-                <img
+                <Image
                   src="/images/banner/front.png"
                   alt="Banner"
-                  className="h-full w-full object-cover"
+                  fill
+                  className="object-cover"
+                  priority
                 />
 
-                {/* Overlay Text */}
-{/*                 <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white bg-black/30 px-2 sm:px-4 pointer-events-none">
+                {/* 
+                Overlay Text
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white bg-black/30 px-2 sm:px-4 pointer-events-none">
                   <h2 className="text-lg sm:text-2xl md:text-4xl font-bold mb-2">
                     Elegance in Motion
                   </h2>
@@ -142,7 +146,8 @@ const Carousel = async () => {
                   <p className="text-base sm:text-xl font-semibold animate-fade-urdu">
                     کشف فیبرکس — روایتی لباس، جدید انداز
                   </p>
-                </div> */}
+                </div>
+                */}
               </Link>
             </CarouselItem>
           ))
@@ -155,14 +160,17 @@ const Carousel = async () => {
               }}
               className="relative block h-[500px] sm:h-[304px] lg:h-[536px] w-full overflow-hidden m-0 p-0"
             >
-              <img
+              <Image
                 src="/images/banner/front.png"
                 alt="Banner"
-                className="h-full w-full object-cover"
+                fill
+                className="object-cover"
+                priority
               />
 
-              {/* Overlay Text */}
-{/*               <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white bg-black/30 px-2 sm:px-4 pointer-events-none">
+              {/* 
+              Overlay Text
+              <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white bg-black/30 px-2 sm:px-4 pointer-events-none">
                 <h2 className="text-lg sm:text-2xl md:text-4xl font-bold mb-2">
                   Elegance in Motion
                 </h2>
@@ -172,7 +180,8 @@ const Carousel = async () => {
                 <p className="text-base sm:text-xl font-semibold animate-fade-urdu">
                   کشف فیبرکس — روایتی لباس، جدید انداز
                 </p>
-              </div> */}
+              </div>
+              */}
             </Link>
           </CarouselItem>
         )}
