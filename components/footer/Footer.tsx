@@ -38,15 +38,15 @@ const Footer = () => {
         <div>
           <h3 className="font-semibold mb-2">Contact Information</h3>
           <ul className="space-y-2 text-sm">
-            <li><span className="font-medium">Email:</span> info@kashaffabrics.com</li>
-            <li><span className="font-medium">Phone:</span> +92 300 1234567</li>
+            <li><span className="font-medium">Email:</span> Kashaffabrics974@gmail.com</li>
+            <li><span className="font-medium">Phone:</span> +92 3044526989</li>
             <li>
               <span className="font-medium">Branch 1:</span><br />
-              123 Main Bazaar, Faisalabad, Pakistan
+             7 street momin pane link cavalry ground Walton road lahore cantt, Pakistan
             </li>
             <li>
               <span className="font-medium">Branch 2:</span><br />
-              456 Commercial Area, Lahore, Pakistan
+              Nadrabad stop street 2 bedian road lahore cantt, Pakistan
             </li>
           </ul>
         </div>
