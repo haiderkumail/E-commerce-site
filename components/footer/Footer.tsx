@@ -42,7 +42,7 @@ const Footer = () => {
             <li><span className="font-medium">Phone:</span> +92 3044526989</li>
             <li>
               <span className="font-medium">Branch 1:</span><br />
-             7 street momin pane link cavalry ground Walton road lahore cantt, Pakistan
+             7 street momin lane link cavalry ground Walton road lahore cantt, Pakistan
             </li>
             <li>
               <span className="font-medium">Branch 2:</span><br />
