@@ -38,7 +38,7 @@ const ContactUs = () => {
             <FaMapMarkerAlt className="text-4xl mb-4 text-primary mx-auto" />
             <h3 className="text-xl font-semibold mb-2 dark:text-white">Our Location</h3>
 <p className="text-gray-600 dark:text-gray-300">
-  Visit us at <strong>Branch 1: 7 Street, Momin Pura Link, Cavalry Ground, Walton Road, Lahore Cantt</strong> and <strong>Branch 2: Nadrabad stop street 2 bedian road lahore cantt</strong>.
+  Visit us at <strong>Branch 1: 7 street momin lane link cavalry ground Walton road lahore cantt</strong> and <strong>Branch 2: Nadrabad stop street 2 bedian road lahore cantt</strong>.
 </p>
 
           </div>
