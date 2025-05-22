@@ -113,7 +113,7 @@ import {
 const Banners = [
   {
     desktopSrc: '/images/banner/front.png',
-    mobileSrc: '/images/banner/mobile.png',
+    mobileSrc: '/images/banner/mob3.png',
     alt: 'Big Eid Big – Offer up to 50% Off',
     link: {
       pathname: '/search',
