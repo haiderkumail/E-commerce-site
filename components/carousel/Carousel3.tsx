@@ -25,27 +25,28 @@ const salesBanners = [
 
 const Carousel3 = () => {
   return (
-    <SCarousel opts={{ loop: true }}>
-      <CarouselContent>
-        {salesBanners.map((banner, index) => (
-          <CarouselItem key={index} className="!m-0 !p-0 w-screen max-w-none">
-            <Link
-              href={banner.link}
-              className="relative block h-[300px] sm:h-[304px] md:h-[400px] lg:h-[500px] xl:h-[550px] w-full overflow-hidden m-0 p-0"
-            >
-              <Image
-                src={banner.src}
-                alt={banner.alt}
-                layout="fill"
-                objectFit="cover"
-                className="scale-[0.85] sm:scale-[0.88] md:scale-[0.90] lg:scale-[0.93] transition-transform duration-300"
-                priority
-              />
-            </Link>
-          </CarouselItem>
-        ))}
-      </CarouselContent>
-    </SCarousel>
+    <div className="w-screen overflow-hidden">
+      <SCarousel opts={{ loop: true }}>
+        <CarouselContent className="!m-0 !p-0">
+          {salesBanners.map((banner, index) => (
+            <CarouselItem key={index} className="!m-0 !p-0 w-screen max-w-none">
+              <Link
+                href={banner.link}
+                className="relative block h-[300px] sm:h-[304px] md:h-[400px] lg:h-[500px] xl:h-[550px] w-screen"
+              >
+                <Image
+                  src={banner.src}
+                  alt={banner.alt}
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </Link>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+      </SCarousel>
+    </div>
   );
 };
 
