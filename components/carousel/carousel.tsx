@@ -136,7 +136,7 @@ const Carousel = () => {
                 href={banner.link}
                 className="
                   relative block w-full overflow-hidden
-                  h-[650px] sm:h-[800px] md:h-[650px] lg:h-[720px] xl:h-[780px]
+                  h-[650px] sm:h-[650px] md:h-[650px] lg:h-[720px] xl:h-[780px]
                 "
               >
                 {/* Mobile Image - height trimmed from bottom */}
