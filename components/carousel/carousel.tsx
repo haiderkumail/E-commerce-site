@@ -135,21 +135,21 @@ const Carousel = () => {
               <Link
                 href={banner.link}
                 className="
-                  relative block w-full
-                  h-[700px] sm:h-[800px] md:h-[650px] lg:h-[720px] xl:h-[780px]
+                  relative block w-full overflow-hidden
+                  h-[650px] sm:h-[800px] md:h-[650px] lg:h-[720px] xl:h-[780px]
                 "
               >
-                {/* Mobile Image - slightly zoomed out */}
+                {/* Mobile Image - height trimmed from bottom */}
                 <Image
                   src={banner.mobileSrc}
                   alt={banner.alt}
                   fill
                   priority
                   sizes="100vw"
-                  className="block sm:block md:hidden object-cover w-full h-full transition-all duration-300 object-center"
+                  className="block sm:block md:hidden object-cover w-full h-full transition-all duration-300 object-top"
                 />
 
-                {/* Desktop Image - remains same */}
+                {/* Desktop Image - unchanged */}
                 <Image
                   src={banner.desktopSrc}
                   alt={banner.alt}
@@ -171,6 +171,6 @@ export default Carousel;
 
 export const CarouselSkeleton = () => {
   return (
-    <div className="skeleton h-[700px] sm:h-[800px] md:h-[650px] lg:h-[720px] xl:h-[780px] w-screen" />
+    <div className="skeleton h-[650px] sm:h-[800px] md:h-[650px] lg:h-[720px] xl:h-[780px] w-screen" />
   );
 };
