@@ -112,8 +112,9 @@ import {
 
 const Banners = [
   {
-    src: '/images/banner/front.png',
-    alt: 'Mega Sale - Up to 50% Off',
+    desktopSrc: '/images/banner/front.png',
+    mobileSrc: '/images/banner/mob.png',
+    alt: 'Big Eid Big – Offer up to 50% Off',
     link: {
       pathname: '/search',
       query: {
@@ -126,32 +127,50 @@ const Banners = [
 
 const Carousel = () => {
   return (
-    <SCarousel opts={{ loop: true }}>
-      <CarouselContent className="!m-0 !p-0">
-        {Banners.map((banner, index) => (
-          <CarouselItem key={index} className="!m-0 !p-0 w-screen max-w-none">
-            <Link
-              href={banner.link}
-              className="relative block h-[300px] sm:h-[304px] md:h-[400px] lg:h-[450px] xl:h-[500px] w-full overflow-hidden m-0 p-0"
-            >
-              <Image
-                src={banner.src}
-                alt={banner.alt}
-                fill
-                className="scale-[0.85] sm:scale-[0.88] md:scale-[0.90] lg:scale-[0.93] transition-transform duration-300"
-                priority
-                sizes="100vw"
-              />
-            </Link>
-          </CarouselItem>
-        ))}
-      </CarouselContent>
-    </SCarousel>
+    <div className="w-full">
+      <SCarousel opts={{ loop: true }}>
+        <CarouselContent className="!m-0 !p-0">
+          {Banners.map((banner, index) => (
+            <CarouselItem key={index} className="!m-0 !p-0 w-screen max-w-none">
+              <Link
+                href={banner.link}
+                className="
+                  relative block w-full
+                  h-[700px] sm:h-[800px] md:h-[650px] lg:h-[720px] xl:h-[780px]
+                "
+              >
+                {/* Mobile Image */}
+                <Image
+                  src={banner.mobileSrc}
+                  alt={banner.alt}
+                  fill
+                  priority
+                  sizes="100vw"
+                  className="block sm:block md:hidden object-cover w-full h-full transition-all duration-300"
+                />
+
+                {/* Desktop Image */}
+                <Image
+                  src={banner.desktopSrc}
+                  alt={banner.alt}
+                  fill
+                  priority
+                  sizes="100vw"
+                  className="hidden md:block object-cover w-full h-full transition-all duration-300"
+                />
+              </Link>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+      </SCarousel>
+    </div>
   );
 };
 
 export default Carousel;
 
 export const CarouselSkeleton = () => {
-  return <div className="skeleton h-[300px] sm:h-[304px] md:h-[400px] lg:h-[450px] xl:h-[500px] w-screen" />;
+  return (
+    <div className="skeleton h-[700px] sm:h-[800px] md:h-[650px] lg:h-[720px] xl:h-[780px] w-screen" />
+  );
 };
