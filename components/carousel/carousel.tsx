@@ -146,7 +146,7 @@ const Carousel = () => {
                   fill
                   priority
                   sizes="100vw"
-                  className="block sm:block md:hidden object-cover w-full h-full transition-all duration-300 scale-100"
+                  className="block sm:block md:hidden object-cover w-full h-full transition-all duration-300 object-center"
                 />
 
                 {/* Desktop Image - remains same */}
