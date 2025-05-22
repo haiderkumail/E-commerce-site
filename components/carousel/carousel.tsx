@@ -139,17 +139,17 @@ const Carousel = () => {
                   h-[700px] sm:h-[800px] md:h-[650px] lg:h-[720px] xl:h-[780px]
                 "
               >
-                {/* Mobile Image */}
+                {/* Mobile Image - slightly zoomed out */}
                 <Image
                   src={banner.mobileSrc}
                   alt={banner.alt}
                   fill
                   priority
                   sizes="100vw"
-                  className="block sm:block md:hidden object-cover w-full h-full transition-all duration-300"
+                  className="block sm:block md:hidden object-cover w-full h-full transition-all duration-300 scale-95"
                 />
 
-                {/* Desktop Image */}
+                {/* Desktop Image - remains same */}
                 <Image
                   src={banner.desktopSrc}
                   alt={banner.alt}
