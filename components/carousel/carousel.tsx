@@ -103,12 +103,14 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRef, useEffect } from 'react';
 
 import {
   Carousel as SCarousel,
   CarouselContent,
   CarouselItem,
 } from '@/components/ui/carousel';
+import type { CarouselApi } from '@/components/ui/carousel';
 
 const Banners = [
   {
@@ -117,47 +119,67 @@ const Banners = [
     alt: 'Big Eid Big – Offer up to 50% Off',
     link: {
       pathname: '/search',
-      query: {
-        category: 'all',
-        q: '',
-      },
+      query: { category: 'all', q: '' },
+    },
+  },
+  {
+    desktopSrc: '/images/banner/1.png',
+    mobileSrc: '/images/banner/2.png',
+    alt: 'Summer Sale – Flat 50% Off',
+    link: {
+      pathname: '/search',
+      query: { category: 'Ladies Lawn Suits', q: '' },
     },
   },
 ];
 
 const Carousel = () => {
-  return (
-    <div className="w-full">
-      <SCarousel opts={{ loop: true }}>
-        <CarouselContent className="!m-0 !p-0">
-          {Banners.map((banner, index) => (
-            <CarouselItem key={index} className="!m-0 !p-0 w-screen max-w-none">
-              <Link
-                href={banner.link}
-                className="
-                  relative block w-full overflow-hidden
-                  h-[650px] sm:h-[650px] md:h-[650px] lg:h-[720px] xl:h-[780px]
-                "
-              >
-                {/* Mobile Image - height trimmed from bottom */}
-                <Image
-                  src={banner.mobileSrc}
-                  alt={banner.alt}
-                  fill
-                  priority
-                  sizes="100vw"
-                  className="block sm:block md:hidden object-cover w-full h-full transition-all duration-300 object-top"
-                />
+  const carouselApi = useRef<CarouselApi | null>(null);
 
-                {/* Desktop Image - unchanged */}
-                <Image
-                  src={banner.desktopSrc}
-                  alt={banner.alt}
-                  fill
-                  priority
-                  sizes="100vw"
-                  className="hidden md:block object-cover w-full h-full transition-all duration-300"
-                />
+  // Manual autoplay with useEffect
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (carouselApi.current) {
+        carouselApi.current.scrollNext();
+      }
+    }, 4000); // Change every 4 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div className="w-full overflow-hidden bg-white">
+      <SCarousel
+        opts={{ loop: true }}
+        setApi={(api) => (carouselApi.current = api)}
+      >
+        <CarouselContent>
+          {Banners.map((banner, index) => (
+            <CarouselItem key={index} className="w-full">
+              <Link href={banner.link} className="block w-full">
+                {/* Mobile Image */}
+                <div className="md:hidden w-full">
+                  <Image
+                    src={banner.mobileSrc}
+                    alt={banner.alt}
+                    width={1200}
+                    height={600}
+                    priority
+                    className="w-full h-auto object-contain"
+                  />
+                </div>
+
+                {/* Desktop Image */}
+                <div className="hidden md:block w-full">
+                  <Image
+                    src={banner.desktopSrc}
+                    alt={banner.alt}
+                    width={1920}
+                    height={700}
+                    priority
+                    className="w-full h-auto object-contain"
+                  />
+                </div>
               </Link>
             </CarouselItem>
           ))}
@@ -171,6 +193,6 @@ export default Carousel;
 
 export const CarouselSkeleton = () => {
   return (
-    <div className="skeleton h-[650px] sm:h-[800px] md:h-[650px] lg:h-[720px] xl:h-[780px] w-screen" />
+    <div className="skeleton w-full h-[600px]" />
   );
 };
