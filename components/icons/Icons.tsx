@@ -4,7 +4,7 @@ const Icons = () => {
   return (
     <div className='grid grid-cols-2 gap-4 sm:gap-6 sm:gap-x-4 md:gap-x-6 lg:grid-cols-4'>
       {[ 
-        { Icon: Truck, title: 'Free Shipping', desc: 'Order above $200' },
+        { Icon: Truck, title: 'Free Shipping', desc: 'On All Products' },
         { Icon: Wallet, title: 'Money-back', desc: '10 days guarantee' },
         { Icon: LockKeyhole, title: 'Secure Payments', desc: 'Secured by Stripe' },
         { Icon: Phone, title: '24/7 Support', desc: 'Phone and Email support' }
