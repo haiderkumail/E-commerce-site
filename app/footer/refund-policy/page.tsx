@@ -20,7 +20,7 @@ const RefundPolicy = () => {
             <FaDollarSign className="text-4xl mb-4 text-primary mx-auto" />
             <h3 className="text-xl font-semibold mb-2 dark:text-white">Refund Eligibility</h3>
             <p className="text-gray-600 dark:text-gray-300">
-              You can request a refund within 7 days of delivery if the item is unused, unwashed, and in its original packaging.
+              You can request a refund within 10 days of delivery if the item is unused, unwashed, and in its original packaging.
             </p>
           </div>
 
