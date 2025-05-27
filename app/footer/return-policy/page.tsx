@@ -20,7 +20,7 @@ const ReturnPolicy = () => {
             <FaRedo className="text-4xl mb-4 text-primary mx-auto" />
             <h3 className="text-xl font-semibold mb-2 dark:text-white">Return Eligibility</h3>
             <p className="text-gray-600 dark:text-gray-300">
-              Returns are accepted within 7 days of receiving your order. Please ensure items are unused, unwashed, and in original condition.
+              Returns are accepted within 10 days of receiving your order. Please ensure items are unused, unwashed, and in original condition.
             </p>
           </div>
 
