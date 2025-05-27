@@ -102,15 +102,16 @@ const CollectionBar = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`fixed inset-0 z-50 flex items-center justify-center bg-white dark:bg-gray-800 shadow-lg p-4 sm:hidden ${isMenuOpen ? 'block' : 'hidden'}`}
+        className={`fixed inset-0 z-50 flex items-center justify-center bg-gradient-to-r from-pink-500 to-yellow-500 shadow-lg p-4 sm:hidden ${isMenuOpen ? 'block' : 'hidden'}`}
       >
-        <div className="w-11/12 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-xl">
+        <div className="w-11/12 rounded-xl shadow-xl p-6 bg-white/20 dark:bg-gray-800/30 backdrop-blur-md border border-white/30 dark:border-gray-600"
+        >
           {activeCollection && (
             <button onClick={handleBackClick} className="text-gray-700 dark:text-white mb-2 text-sm">
               Back to Collections
             </button>
           )}
-          <h3 className="text-lg font-semibold text-gray-700 dark:text-white mb-4 text-center">
+          <h3 className="text-lg font-semibold text-gray-800 dark:text-white mb-4 text-center">
             {activeCollection
               ? collections.find((col) => col.slug === activeCollection)?.name
               : 'Collections'}
@@ -122,7 +123,7 @@ const CollectionBar = () => {
                 onClick={() => {
                   window.location.href = '/';
                 }}
-                className="text-gray-700 dark:text-white text-sm underline hover:text-black dark:hover:text-gray-300"
+                className="text-gray-800 dark:text-white text-sm underline hover:text-black dark:hover:text-gray-300"
               >
                 ← Back to Home
               </button>
@@ -135,7 +136,7 @@ const CollectionBar = () => {
                 <li key={collection.slug}>
                   <button
                     onClick={() => handleCollectionClick(collection.slug)}
-                    className="text-black dark:text-white text-sm w-full py-2 flex justify-between items-center"
+                    className="text-black dark:text-white text-sm w-full py-2 flex justify-between items-center hover:bg-pink-100 dark:hover:bg-gray-700 rounded-lg px-2"
                   >
                     {collection.name}
                     <span>{'>'}</span>
@@ -149,7 +150,7 @@ const CollectionBar = () => {
                   <li key={cat.name}>
                     <Link
                       href={cat.href}
-                      className="text-black dark:text-white text-sm w-full py-2 block"
+                      className="text-black dark:text-white text-sm w-full py-2 block hover:bg-pink-100 dark:hover:bg-gray-700 rounded-lg px-2"
                     >
                       {cat.name}
                     </Link>
@@ -160,15 +161,16 @@ const CollectionBar = () => {
         </div>
       </div>
 
+
       {/* Mobile Toggle Button */}
-<div className={`fixed bottom-0 left-0 right-0 z-50 p-4 sm:hidden ${!isMenuOpen ? 'block' : 'hidden'}`}>
-  <button
-    onClick={handleMenuToggle}
-    className="bg-gradient-to-r from-pink-500 to-yellow-500 text-white font-semibold text-sm w-[200px] mx-auto py-2 rounded-xl shadow-md hover:opacity-90 transition-all duration-200 block"
-  >
-    Collections
-  </button>
-</div>
+      <div className={`fixed bottom-0 left-0 right-0 z-50 p-4 sm:hidden ${!isMenuOpen ? 'block' : 'hidden'}`}>
+        <button
+          onClick={handleMenuToggle}
+          className="bg-gradient-to-r from-pink-500 to-yellow-500 text-white font-semibold text-sm w-[200px] mx-auto py-2 rounded-xl shadow-md hover:opacity-90 transition-all duration-200 block"
+        >
+          Collections
+        </button>
+      </div>
 
 
 
